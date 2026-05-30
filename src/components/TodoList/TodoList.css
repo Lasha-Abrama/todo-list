@@ -1,0 +1,39 @@
+.todo-list {
+  width: 520px;
+  margin: 30px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.empty-state__image {
+  width: 221px;
+  height: 174px;
+  background-image: url("/reference/detective-light.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+:root[data-theme="dark"] .empty-state__image {
+  background-image: url("/reference/detective-dark.png");
+}
+
+.empty-state h2 {
+  margin: 17px 0 0;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 620px) {
+  .todo-list {
+    width: 100%;
+  }
+}

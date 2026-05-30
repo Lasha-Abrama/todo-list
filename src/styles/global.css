@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --purple: #6c63ff;
+  --purple-hover: #5850dd;
+  --bg: #f7f7f7;
+  --text: #252525;
+  --muted: #c3c1e5;
+  --line: #6c63ff;
+  --field-bg: transparent;
+  --icon: #cdcdcd;
+  --modal-overlay: rgba(37, 37, 37, 0.7);
+  --modal-bg: #f7f7f7;
+  --modal-line: #f7f7f7;
+  font-family: Kanit, Arial, Helvetica, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #252525;
+  --text: #f7f7f7;
+  --muted: #666666;
+  --line: #f7f7f7;
+  --field-bg: #252525;
+  --icon: #f7f7f7;
+  --modal-overlay: rgba(0, 0, 0, 0.1);
+  --modal-bg: #252525;
+  --modal-line: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+body:has(.modal--open) {
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 109px;
+  height: 38px;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  border: 1px solid var(--purple);
+  background: var(--purple);
+  color: #f7f7f7;
+}
+
+.button--primary:hover {
+  background: var(--purple-hover);
+}
+
+.button--ghost {
+  border: 1px solid var(--purple);
+  background: transparent;
+  color: var(--purple);
+}
+
+.icon-button {
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--icon);
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0;
+  position: relative;
+  transition:
+    color 140ms ease,
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+
+.icon-button svg {
+  display: block;
+}
+
+.icon-button:hover {
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+.icon-button--danger:hover {
+  color: #e50000;
+}

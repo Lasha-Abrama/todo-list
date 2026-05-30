@@ -1,0 +1,70 @@
+.todo-row {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 17px;
+  min-height: 60px;
+  border-bottom: 1px solid var(--purple);
+}
+
+.todo-row:last-child {
+  border-bottom: 0;
+}
+
+.todo-row__check {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+}
+
+.todo-row__check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.todo-row__check span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--purple);
+  border-radius: 2px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.todo-row__check input:checked + span {
+  background: var(--purple);
+}
+
+.todo-row__check svg {
+  display: block;
+}
+
+.todo-row h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.todo-row--complete h2 {
+  color: #8e8e8e;
+  text-decoration: line-through;
+}
+
+.todo-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-row:hover .icon-button,
+.todo-row:focus-within .icon-button {
+  opacity: 1;
+}
